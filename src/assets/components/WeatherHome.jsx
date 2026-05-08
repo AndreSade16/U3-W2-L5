@@ -86,10 +86,11 @@ const WeatherHome = (props) => {
           }}
         >
           <Row className="justify-content-center align-items-center">
+            <h1 className="text-white text-center mb-4">Search your city:</h1>
             <Col xs={12} sm={6}>
               <Form.Control
                 type="text"
-                placeholder="Search your city"
+                placeholder="Ex. Rome,IT (for better accuracy)"
                 className=" mr-sm-2 fs-3"
                 value={inputValue}
                 onChange={(e) => {
@@ -137,31 +138,31 @@ const WeatherHome = (props) => {
                       {getWeatherEmoji(place.list[0].weather[0].main)}
                     </Card.Text>
                     <Card.Text className="m-0 text-center text-white">
-                      <span className="fw-semibold">
-                        <i
+                      <span className="fw-semibold fst-italic">
+                        {/* <i
                           class="fas fa-thermometer-half"
                           style={{ color: "black" }}
-                        ></i>{" "}
+                        ></i>{" "} */}
                         Temp:
                       </span>{" "}
                       {place.list[0].main.temp.toFixed(1)}°
                     </Card.Text>
                     <Card.Text className="m-0 text-center text-white">
-                      <span className="fw-semibold">
-                        <i
+                      <span className="fw-semibold fst-italic">
+                        {/* <i
                           class="fas fa-thermometer-empty"
                           style={{ color: "blue" }}
-                        ></i>{" "}
+                        ></i>{" "} */}
                         Min:
                       </span>{" "}
                       {place.list[0].main.temp_min.toFixed(1)}°
                     </Card.Text>
                     <Card.Text className="m-0 text-center text-white">
-                      <span className="fw-semibold">
-                        <i
+                      <span className="fw-semibold fst-italic">
+                        {/* <i
                           class="fas fa-thermometer-full"
                           style={{ color: "red" }}
-                        ></i>{" "}
+                        ></i>{" "} */}
                         Max:
                       </span>{" "}
                       {place.list[0].main.temp_max.toFixed(1)}°

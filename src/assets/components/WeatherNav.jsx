@@ -28,8 +28,8 @@ const WeatherNav = () => {
             <Link to="/" className="nav-link text-white">
               Home
             </Link>
-            <Nav.Link href="#link" className="text-white">
-              Link
+            <Nav.Link href="https://openweathermap.org/" className="text-white">
+              Api Credits
             </Nav.Link>
           </Nav>
           <Form
