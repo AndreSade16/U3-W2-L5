@@ -76,37 +76,49 @@ const WeatherDetails = () => {
             <Row className="border-1 border-black bg-white text-black py-2 rounded-2">
               <Col xs={12} sm={6} md={4} lg={2}>
                 <p className="text-center m-0">
-                  <span className="fw-semibold">Weather: </span>
+                  <span className="fw-semibold">
+                    <i class="fas fa-cloud"></i> Weather:{" "}
+                  </span>
                   {fetched.list[0].weather[0].main}
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
                 <p className="text-center m-0">
-                  <span className="fw-semibold">Temp: </span>
+                  <span className="fw-semibold">
+                    <i class="fas fa-thermometer-three-quarters"></i> Temp:{" "}
+                  </span>
                   {fetched.list[0].main.temp}°C
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
                 <p className="text-center m-0">
-                  <span className="fw-semibold">Feels Like: </span>
+                  <span className="fw-semibold">
+                    <i class="fas fa-user"></i> Feels Like:{" "}
+                  </span>
                   {fetched.list[0].main.feels_like}°C
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
                 <p className="text-center m-0">
-                  <span className="fw-semibold">Min: </span>
+                  <span className="fw-semibold">
+                    <i class="fas fa-thermometer-empty"></i> Min:{" "}
+                  </span>
                   {fetched.list[0].main.temp_min}°C
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
                 <p className="text-center m-0">
-                  <span className="fw-semibold">Max: </span>
+                  <span className="fw-semibold">
+                    <i class="fas fa-thermometer-full"></i> Max:{" "}
+                  </span>
                   {fetched.list[0].main.temp_max}°C
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
                 <p className="text-center m-0">
-                  <span className="fw-semibold text-nowrap">Wind: </span>
+                  <span className="fw-semibold text-nowrap">
+                    <i class="fas fa-wind"></i> Wind:{" "}
+                  </span>
                   {fetched.list[0].wind.speed}Km/H
                 </p>
               </Col>
