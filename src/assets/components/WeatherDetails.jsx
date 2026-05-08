@@ -50,8 +50,8 @@ const WeatherDetails = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return isLoading ? (
-    <div className="mt-4 d-flex justify-content-center align-items-center">
-      <Spinner animation="border" role="status">
+    <div className="mt-5 d-flex justify-content-center align-items-center">
+      <Spinner animation="grow" variant="light" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     </div>
@@ -71,7 +71,7 @@ const WeatherDetails = () => {
           >
             {getWeatherEmoji(fetched.list[0].weather[0].main)}
           </div>
-          <Container>
+          <Container className="px-5">
             <Row className="border-1 border-black bg-white text-black py-2 rounded-2">
               <Col xs={12} sm={6} md={4} lg={2}>
                 <p className="text-center m-0">

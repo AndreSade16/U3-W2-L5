@@ -110,7 +110,7 @@ const WeatherHome = (props) => {
       </Row>
       <Row className="mt-4 justify-content-center">
         {isLoading ? (
-          <Spinner animation="border" role="status">
+          <Spinner animation="border" variant="light" role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>
         ) : (
@@ -136,18 +136,34 @@ const WeatherHome = (props) => {
                     >
                       {getWeatherEmoji(place.list[0].weather[0].main)}
                     </Card.Text>
-                    <Card.Text className="m-0">
+                    <Card.Text className="m-0 text-center text-white">
                       <span className="fw-semibold">
-                        <i class="fas fa-thermometer-half"></i>
+                        <i
+                          class="fas fa-thermometer-half"
+                          style={{ color: "black" }}
+                        ></i>{" "}
+                        Temp:
                       </span>{" "}
                       {place.list[0].main.temp.toFixed(1)}°
                     </Card.Text>
-                    <Card.Text className="m-0">
-                      <span className="fw-semibold">Min:</span>{" "}
+                    <Card.Text className="m-0 text-center text-white">
+                      <span className="fw-semibold">
+                        <i
+                          class="fas fa-thermometer-empty"
+                          style={{ color: "blue" }}
+                        ></i>{" "}
+                        Min:
+                      </span>{" "}
                       {place.list[0].main.temp_min.toFixed(1)}°
                     </Card.Text>
-                    <Card.Text className="m-0">
-                      <span className="fw-semibold">Max:</span>{" "}
+                    <Card.Text className="m-0 text-center text-white">
+                      <span className="fw-semibold">
+                        <i
+                          class="fas fa-thermometer-full"
+                          style={{ color: "red" }}
+                        ></i>{" "}
+                        Max:
+                      </span>{" "}
                       {place.list[0].main.temp_max.toFixed(1)}°
                     </Card.Text>
                   </Card.Body>
