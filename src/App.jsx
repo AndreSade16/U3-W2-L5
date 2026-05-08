@@ -44,7 +44,10 @@ function App() {
         <header>
           <WeatherNav />
         </header>
-        <main className="flex-grow-1 bg-secondary-subtle d-flex flex-column">
+        <main
+          className="flex-grow-1 d-flex flex-column"
+          style={{ backgroundColor: "rgb(50 95 136)" }}
+        >
           <Routes>
             <Route
               path="/"

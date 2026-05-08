@@ -50,56 +50,61 @@ const WeatherDetails = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return isLoading ? (
-    <Spinner animation="border" role="status">
-      <span className="visually-hidden">Loading...</span>
-    </Spinner>
+    <div className="mt-4 d-flex justify-content-center align-items-center">
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    </div>
   ) : (
     <Container fluid={true} className="mt-4">
       <Row className="justify-content-center">
-        <Col xs={12}>
-          <h1 className="text-center">
+        <Col xs={12} className="d-flex flex-column align-items-center">
+          <h1 className="text-center text-white">
             {fetched.city.name}, {fetched.city.country}
           </h1>
-          <p className="text-center text-secondary">
+          <p className="text-center text-white">
             Last update at: {fetched.list[0].dt_txt}
           </p>
-          <div className="text-center" style={{ fontSize: "5rem" }}>
+          <div
+            className="text-center px-4 rounded-3  mb-4"
+            style={{ fontSize: "8rem", width: "fit-content" }}
+          >
             {getWeatherEmoji(fetched.list[0].weather[0].main)}
           </div>
           <Container>
-            <Row>
+            <Row className="border-1 border-black bg-white text-black py-2 rounded-2">
               <Col xs={12} sm={6} md={4} lg={2}>
-                <p className="text-center">
+                <p className="text-center m-0">
                   <span className="fw-semibold">Weather: </span>
                   {fetched.list[0].weather[0].main}
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
-                <p className="text-center">
+                <p className="text-center m-0">
                   <span className="fw-semibold">Temp: </span>
                   {fetched.list[0].main.temp}°C
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
-                <p className="text-center">
+                <p className="text-center m-0">
                   <span className="fw-semibold">Feels Like: </span>
                   {fetched.list[0].main.feels_like}°C
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
-                <p className="text-center">
+                <p className="text-center m-0">
                   <span className="fw-semibold">Min: </span>
                   {fetched.list[0].main.temp_min}°C
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
-                <p className="text-center">
+                <p className="text-center m-0">
                   <span className="fw-semibold">Max: </span>
                   {fetched.list[0].main.temp_max}°C
                 </p>
               </Col>
               <Col xs={12} sm={6} md={4} lg={2}>
-                <p className="text-center">
+                <p className="text-center m-0">
                   <span className="fw-semibold text-nowrap">Wind: </span>
                   {fetched.list[0].wind.speed}Km/H
                 </p>
@@ -109,7 +114,7 @@ const WeatherDetails = () => {
         </Col>
       </Row>
       <Row className="g-2 justify-content-center mb-4 mt-3">
-        <h3 className="text-center mb-3">Hourly Weather</h3>
+        <h3 className="text-center mb-3 text-white">Hourly Weather</h3>
         {fetched.list.slice(0, 5).map((forecast, i) => {
           return (
             <Col
@@ -120,9 +125,9 @@ const WeatherDetails = () => {
               key={"hourly-card-" + i}
               className="d-flex justify-content-center"
             >
-              <Card className="w-100">
+              <Card className="w-100 overflow-hidden shadow">
                 <Card.Text
-                  className="text-center m-0"
+                  className="text-center m-0 bg-white"
                   style={{ fontSize: "5rem" }}
                 >
                   {getWeatherEmoji(forecast.weather[0].main)}

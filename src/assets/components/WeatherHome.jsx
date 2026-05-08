@@ -127,7 +127,7 @@ const WeatherHome = (props) => {
                   }}
                 >
                   <Card.Body>
-                    <Card.Title className="text-decoration-underline fw-bold text-white">
+                    <Card.Title className="text-decoration-underline fw-bold text-white fst-italic">
                       {place.city.name}
                     </Card.Title>
                     <Card.Text
@@ -137,7 +137,9 @@ const WeatherHome = (props) => {
                       {getWeatherEmoji(place.list[0].weather[0].main)}
                     </Card.Text>
                     <Card.Text className="m-0">
-                      <span className="fw-semibold">Temp:</span>{" "}
+                      <span className="fw-semibold">
+                        <i class="fas fa-thermometer-half"></i>
+                      </span>{" "}
                       {place.list[0].main.temp.toFixed(1)}°
                     </Card.Text>
                     <Card.Text className="m-0">
