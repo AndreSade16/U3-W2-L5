@@ -5,9 +5,10 @@ import { useNavigate, useParams } from "react-router";
 const WeatherDetails = () => {
   const [fetched, setFetched] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const location = useParams().location;
   const apiKey = "4581ed4a75ffef0475104ebe50dad4bb";
   const navigate = useNavigate();
+  const location = useParams().location;
+
   const getWeatherEmoji = (weather) => {
     if (weather === "Clouds") {
       return "☁️";
@@ -48,7 +49,7 @@ const WeatherDetails = () => {
     getCityForecast(location);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [location]);
   return isLoading ? (
     <div className="mt-5 d-flex justify-content-center align-items-center">
       <Spinner animation="grow" variant="light" role="status">
